@@ -1,9 +1,11 @@
 package bush.ufc.br.bush;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +14,15 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView img = (ImageView)findViewById(R.id.imageView);
+        img.setBackgroundResource(R.drawable.spin);
+
+        // Get the background, which has been compiled to an AnimationDrawable object.
+        AnimationDrawable frameAnimation = (AnimationDrawable) img.getBackground();
+
+        // Start the animation (looped playback by default).
+        frameAnimation.start();
     }
 
 
