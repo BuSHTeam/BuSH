@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="nameBuSH">Bus Stop Helper</string>
+    <string name="title_activity_splash">Splash</string>
+
 </resources>
