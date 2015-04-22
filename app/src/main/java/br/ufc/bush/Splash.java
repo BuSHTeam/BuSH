@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,8 +12,8 @@ import android.widget.ImageView;
 
 public class Splash extends Activity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 2850; //Duration
     ImageView img;
+    AnimationDrawable frameAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,7 @@ public class Splash extends Activity {
         img.setBackgroundResource(R.drawable.spin);
 
         // Get the background, which has been compiled to an AnimationDrawable object.
-        final AnimationDrawable frameAnimation = (AnimationDrawable) img.getBackground();
+        frameAnimation = (AnimationDrawable) img.getBackground();
 
         // Start the animation (looped playback by default).
         frameAnimation.start();
@@ -38,7 +37,7 @@ public class Splash extends Activity {
                 startActivity(openMainActivity);
                 finish();
             }
-        }, SPLASH_DISPLAY_LENGTH);
+        }, getTotalDuration());
     }
 
     @Override
@@ -61,5 +60,16 @@ public class Splash extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public int getTotalDuration() {
+
+        int iDuration = 0;
+
+        for (int i = 0; i < frameAnimation.getNumberOfFrames(); i++) {
+            iDuration += frameAnimation.getDuration(i);
+        }
+
+        return iDuration;
     }
 }
