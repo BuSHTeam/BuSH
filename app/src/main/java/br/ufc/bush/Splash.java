@@ -1,35 +1,49 @@
-package bush.ufc.br.bush;
+package br.ufc.bush;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
-import android.support.v7.app.ActionBarActivity;
+import android.os.Handler;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class Splash extends Activity {
+
+    ImageView img;
+    AnimationDrawable frameAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_splash);
 
-        ImageView img = (ImageView)findViewById(R.id.imageView);
+        img = (ImageView)findViewById(R.id.splashOnibus);
         img.setBackgroundResource(R.drawable.spin);
 
         // Get the background, which has been compiled to an AnimationDrawable object.
-        AnimationDrawable frameAnimation = (AnimationDrawable) img.getBackground();
+        frameAnimation = (AnimationDrawable) img.getBackground();
 
         // Start the animation (looped playback by default).
         frameAnimation.start();
-    }
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                frameAnimation.stop();
+                Intent openMainActivity =  new Intent(Splash.this,MainActivity.class);
+                startActivity(openMainActivity);
+                finish();
+            }
+        }, getTotalDuration());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_splash, menu);
         return true;
     }
 
@@ -46,5 +60,16 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public int getTotalDuration() {
+
+        int iDuration = 0;
+
+        for (int i = 0; i < frameAnimation.getNumberOfFrames(); i++) {
+            iDuration += frameAnimation.getDuration(i);
+        }
+
+        return iDuration;
     }
 }

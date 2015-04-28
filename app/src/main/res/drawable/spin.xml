@@ -9,7 +9,7 @@
     <item android:drawable="@drawable/bus2" android:duration="150" />
     <item android:drawable="@drawable/bus3" android:duration="150" />
     <item android:drawable="@drawable/bus4" android:duration="150" />
-    <item android:drawable="@drawable/bus5" android:duration="1000" />
+    <item android:drawable="@drawable/bus5" android:duration="1500" />
     <item android:drawable="@drawable/bus6" android:duration="150" />
     <item android:drawable="@drawable/bus7" android:duration="150" />
     <item android:drawable="@drawable/bus8" android:duration="150" />
