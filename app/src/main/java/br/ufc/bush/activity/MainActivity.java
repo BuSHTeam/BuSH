@@ -1,24 +1,27 @@
-package br.ufc.bush;
+package br.ufc.bush.activity;
 
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.ActivityRecognition;
-import com.google.android.gms.location.LocationServices;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -36,9 +39,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufc.utils.ActivityRecognitionIntentService;
+import br.ufc.bush.R;
+import br.ufc.bush.adapter.FragmentDrawer;
+import br.ufc.bush.utils.ActivityRecognitionIntentService;
 
-public class MainActivity extends ActionBarActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, FragmentDrawer.FragmentDrawerListener {
     private static final String HOST = "http://www.sefiro.com.br/";
     private static final String FILE = "bush/location.php";
     private static final String TAG = "BuSH";
@@ -46,63 +51,88 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
     private Context mContext;
     private GoogleApiClient mGApiClient;
     private BroadcastReceiver receiver;
-    private TextView tvName;
+
+    private Toolbar mToolbar;
 
     String  id = "";
+    private FragmentDrawer drawerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvName = (TextView) findViewById(R.id.tvName);
-
         //Set the context
         mContext = this;
 
-        //Check Google Play Service Available
-        if(isPlayServiceAvailable()) {
-            mGApiClient = new GoogleApiClient.Builder(this)
-                    .addApi(LocationServices.API)
-                    .addApi(ActivityRecognition.API)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .build();
-            //Connect to gPlay
-            mGApiClient.connect();
-        }else{
-            Log.d(TAG, "Google Play Service not Available");
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        getSupportActionBar().setElevation(4);
+
+        drawerFragment = (FragmentDrawer)
+                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
+        drawerFragment.setDrawerListener(this);
+
+        displayView(0);
+
+//      registerActivityService();
+
+
+    }
+
+
+    @Override
+    public void onDrawerItemSelected(View view, int position) {
+        displayView(position);
+    }
+
+    private void displayView(int position) {
+        Fragment fragment = null;
+        String title = getString(R.string.app_name);
+        switch (position) {
+            case 0:
+                fragment = new HomeFragment();
+                title = getString(R.string.title_home);
+                break;
+            case 1:
+                fragment = new FriendsFragment();
+                title = getString(R.string.title_friends);
+                break;
+            case 2:
+                fragment = new MessagesFragment();
+                title = getString(R.string.title_messages);
+                break;
+            default:
+                break;
         }
 
-        //Broadcast receiver
-        receiver  = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                String v =  "Activity :" +
-                        intent.getStringExtra("act") + " " +
-                        "Confidence : " + intent.getExtras().getInt("confidence") + "n";
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_body, fragment);
+            fragmentTransaction.commit();
 
-                v += tvName.getText();
-                tvName.setText(v);
-            }
-        };
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction("SAVVY");
-        registerReceiver(receiver, filter);
+            // set the toolbar title
+            getSupportActionBar().setTitle(title);
+        }
     }
+
 
     @Override
     protected void onResume() {
         super.onResume();
-        new RegisterTask().execute(HOST+FILE, "anderson");
+//      new RegisterTask().execute(HOST+FILE, "anderson");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mGApiClient.disconnect();
-        unregisterReceiver(receiver);
+//      mGApiClient.disconnect();
+//      unregisterReceiver(receiver);
     }
 
     @Override
@@ -148,6 +178,39 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.C
 
     private boolean isPlayServiceAvailable() {
         return GooglePlayServicesUtil.isGooglePlayServicesAvailable(mContext) == ConnectionResult.SUCCESS;
+    }
+
+    private void registerActivityService() {
+//        //Check Google Play Service Available
+//        if(isPlayServiceAvailable()) {
+//            mGApiClient = new GoogleApiClient.Builder(this)
+//                    .addApi(LocationServices.API)
+//                    .addApi(ActivityRecognition.API)
+//                    .addConnectionCallbacks(this)
+//                    .addOnConnectionFailedListener(this)
+//                    .build();
+//            //Connect to gPlay
+//            mGApiClient.connect();
+//        }else{
+//            Log.d(TAG, "Google Play Service not Available");
+//        }
+//
+//        //Broadcast receiver
+//        receiver  = new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                String v =  "Activity :" +
+//                        intent.getStringExtra("act") + " " +
+//                        "Confidence : " + intent.getExtras().getInt("confidence") + "n";
+//
+//                v += tvName.getText();
+//                tvName.setText(v);
+//            }
+//        };
+//
+//        IntentFilter filter = new IntentFilter();
+//        filter.addAction("SAVVY");
+//        registerReceiver(receiver, filter);
     }
 
     // Classe para conexao Android_PHP

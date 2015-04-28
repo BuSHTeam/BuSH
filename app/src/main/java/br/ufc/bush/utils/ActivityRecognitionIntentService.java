@@ -1,4 +1,4 @@
-package br.ufc.utils;
+package br.ufc.bush.utils;
 
 import android.app.IntentService;
 import android.content.Intent;

@@ -10,4 +10,11 @@
     <color name="orangelight">#F3AE1B</color>
     <color name="orangedark">#BB6008</color>
     <color name="black">#000000</color>
+
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#3F51B5</color>
 </resources>
