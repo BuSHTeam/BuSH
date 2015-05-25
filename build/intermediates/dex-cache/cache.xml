@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-60fb49b9f40c5b6580cb3b7c791056765aeed4b1.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-c22588459f2a8721129e39267fe625b69a5066d5.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-8981314d98f13844cdc70c4161112a59fc46a3f8.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="983e2f375504bc04def18e709c35192afe92e65f">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-93e600f28153bf87c90c1964574be7b3f1af5a1d.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-882ebfa27cd381d30e0097865460d24192f41346.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-07832a1d10e45724dc4120e4097e4ee3c408494f.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-10e43d20e856bffb2afbc944cf12380e7a56cd7d.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-1a389e50dae170b72ae13a67b32a670988167ad8.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-4e3038a0df27264ce2353ee56cfb859c628dff61.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-a3ad852e29f4253426780e0c1f48cc1515863d42.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-a84a7e2613acfaff96484d9f3a5a5cd333222eeb.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-69acdfe462c1baec8d4285ba30ff792e4e525f4a.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-08730eebc00b2caf5f33e70dd01bed58260b427f.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-7bf7d065848f4588d4de7d83a6bcae8eee6d73a5.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-8c372dfae9a7823be2de778c8702a691689bc34d.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-e76bd73ecf9d48411c2571027b617865e6ca97ab.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-96f87b086cd108825e96011d83b0156619dc12c3.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-9c0bcf0005142707bfda598adb30af3cfd8d7e04.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-af5420a16f2bd8443c61fb694d7068018f502691.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-d0ae4d9297c603706312d80a00dda74e2490165c.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-2c34d2699560b10ec7b9706b7b3fe3e4d3262764.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-f17d4321aaaae402ebed15c2f20a155e7c5c5078.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-bff5ad6ce963fecc5aeae1afb4c20a88c334e798.jar" />
+    </item>
+    <item
+        jar="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex dex="C:\Users\GREAT\Documents\GitHub\BuSH\app\build\intermediates\pre-dexed\debug\classes-b32c0076c91315391c5c9a5cb686039bd27123ea.jar" />
+    </item>
+
+</items>
