@@ -1,5 +1,7 @@
 package br.ufc.bush.notifiers;
 
+import android.location.Location;
+
 import com.google.android.gms.maps.model.LatLng;
 
 /**
@@ -27,7 +29,7 @@ public class LoccamLocationUpdater extends LocationUpdater {
     }
 
     @Override
-    public LatLng getLocation() {
+    public Location getLocation() {
         return null;
     }
 }

@@ -1,5 +1,7 @@
 package br.ufc.bush.listeners;
 
+import android.location.Location;
+
 import com.google.android.gms.maps.model.LatLng;
 
 /**
@@ -7,7 +9,7 @@ import com.google.android.gms.maps.model.LatLng;
  */
 public interface LocationListener {
 
-    public void updateLocation(LatLng latLng);
+    public void updateLocation(Location location);
 
     public void onLocationServiceConnected();
 

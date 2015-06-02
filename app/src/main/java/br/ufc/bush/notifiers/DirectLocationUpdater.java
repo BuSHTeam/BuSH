@@ -55,13 +55,13 @@ public class DirectLocationUpdater extends LocationUpdater implements GoogleApiC
     }
 
     @Override
-    public LatLng getLocation() {
+    public Location getLocation() {
         if(mGoogleApiClient != null){
             Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             if(location == null){
                 return null;
             }
-            return new LatLng(location.getLatitude(), location.getLongitude());
+            return location;
         }
         else{
             Log.e("DirectLocationUpdater", "Google Play Services not initialized");
@@ -88,7 +88,6 @@ public class DirectLocationUpdater extends LocationUpdater implements GoogleApiC
 
     @Override
     public void onLocationChanged(Location location) {
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        notifyListeners(latLng);
+        notifyListeners(location);
     }
 }

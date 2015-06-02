@@ -1,8 +1,7 @@
 package br.ufc.bush.notifiers;
 
 import android.content.Context;
-
-import com.google.android.gms.maps.model.LatLng;
+import android.location.Location;
 
 import java.util.ArrayList;
 
@@ -53,9 +52,9 @@ public abstract class LocationUpdater {
         }
     }
 
-    public void notifyListeners(LatLng latLng){
+    public void notifyListeners(Location location){
         for(LocationListener listener : listeners){
-            listener.updateLocation(latLng);
+            listener.updateLocation(location);
         }
     }
 
@@ -75,5 +74,5 @@ public abstract class LocationUpdater {
 
     public abstract void stopLocationService();
 
-    public abstract LatLng getLocation();
+    public abstract Location getLocation();
 }
