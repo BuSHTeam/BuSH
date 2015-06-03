@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -118,6 +119,20 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
             }
         });
 
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                while(true){
+//                    try {
+//                        Thread.sleep(7000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    isBusNear = false;
+//                }
+//            }
+//        }).start();
         // Inflate the layout for this fragment
         return rootView;
     }
@@ -185,7 +200,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         );
 
 
-        if(calculateDistance(myLatitude, myLongitude, location.getLatitude(), location.getLongitude()) >  10){
+        double distance = calculateDistance(myLatitude, myLongitude, location.getLatitude(), location.getLongitude());
+        //Toast.makeText(getActivity().getApplicationContext(), String.valueOf(distance), Toast.LENGTH_SHORT).show();
+        if(distance <  50){
             if(!isBusNear){
                 speak("O onibus se aproxima");
                 isBusNear = true;
