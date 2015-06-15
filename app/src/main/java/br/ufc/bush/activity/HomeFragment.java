@@ -14,6 +14,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -33,8 +34,16 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Locale;
 import java.util.Random;
 
@@ -214,6 +223,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
 
         mDeclination = field.getDeclination();
         busMarker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
+
+        new RegisterTask().execute("Device_test", String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()), String.valueOf(System.currentTimeMillis()));
     }
 
     @Override
@@ -240,5 +251,39 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         double d = 6367000 * c;
         return Math.round(d);
+    }
+
+    // Classe para conexao Android_PHP
+    private class RegisterTask extends AsyncTask<String, Void, Boolean> {
+
+        protected void onPreExecute() {
+
+        }
+
+        protected Boolean doInBackground(String... params) {
+            HttpClient client = new DefaultHttpClient();
+            String url = "http://www.sefiro.com.br/bush/insere.php?" + "id_device=" + params[0]
+                         + "&latitude=" + params[1]
+                         + "&longitude=" + params[2]
+                         + "&timestamp=" + params[3];
+
+            HttpGet httpGet = new HttpGet();
+            try {
+                httpGet.setURI(new URI(url));
+                HttpResponse response = client.execute(httpGet);
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return true;
+        }
+
+        protected void onPostExecute(Boolean result) {
+
+        }
     }
 }

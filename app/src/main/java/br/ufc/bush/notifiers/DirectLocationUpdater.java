@@ -44,8 +44,8 @@ public class DirectLocationUpdater extends LocationUpdater implements GoogleApiC
 
     protected void createLocationRequest(){
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(500);
+        mLocationRequest.setInterval(2000);
+        mLocationRequest.setFastestInterval(2000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
